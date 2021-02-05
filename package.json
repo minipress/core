@@ -1,0 +1,30 @@
+{
+    "name": "core",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.ts",
+    "dependencies": {
+        "apollo-server": "^2.19.2",
+        "class-validator": "^0.13.1",
+        "reflect-metadata": "^0.1.13",
+        "sqlite3": "^5.0.1",
+        "type-graphql": "^1.1.1",
+        "typeorm": "^0.2.30"
+    },
+    "devDependencies": {
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "ts-node src/index.ts"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/minipress/core.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/minipress/core/issues"
+    },
+    "homepage": "https://github.com/minipress/core#readme"
+}
