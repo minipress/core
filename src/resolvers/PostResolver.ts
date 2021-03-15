@@ -1,6 +1,6 @@
 import { CreatePostInput } from "../inputs/CreatePostInput";
 import { UpdatePostInput } from "../inputs/UpdatePostInput";
-import { Post } from "../models/Posts";
+import { Post } from "../models/Post";
 import { Resolver, Query, Mutation, Arg } from "type-graphql";
 
 @Resolver(Post)
@@ -13,8 +13,7 @@ export class PostResolver {
     @Query(() => Post)
     async post(@Arg("id") id: string) {
         let post = await Post.findOne({ where: { id } });
-        console.log(post)
-        
+
         if (!post) throw new Error("Post not found!");
         return post
     }
