@@ -5,7 +5,7 @@ import { ObjectType, Field, ID } from "type-graphql";
 @ObjectType()
 export class Post extends BaseEntity {
 
-    @Field(() => String)
+    @Field(type => String)
     @Column()
     slug: string;
 
@@ -13,99 +13,103 @@ export class Post extends BaseEntity {
     @PrimaryGeneratedColumn()
     id: string;
 
-    @Field(() => String)
+    @Field(type => String)
     @Column()
     uuid: string;
 
-    @Field(() => String)
+    @Field(type => String)
+    @Column()
+    author: string;
+
+    @Field(type => String)
     @Column()
     title: string;
 
-    @Field(() => String)
+    @Field(type => String)
     @Column()
     html: string;
 
-    @Field(() => String)
-    @Column()
-    comment_id: string;
+    @Field(type => String, { nullable: true })
+    @Column({ nullable: true })
+    comment_id?: string;
 
-    @Field(() => String)
-    @Column()
-    feature_image: string;
+    @Field(type => String, { nullable: true })
+    @Column({ nullable: true })
+    feature_image?: string;
 
-    @Field(() => Boolean)
+    @Field(type => Boolean)
     @Column()
-    featured: boolean;
+    featured: boolean = false;
 
-    @Field(() => String)
+    @Field(type => String)
     @Column()
-    visibility: string;
+    visibility: string = "public";
 
-    @Field(() => Number)
+    @Field(type => Number)
     @Column()
     created_at: number;
 
-    @Field(() => Number)
-    @Column()
-    updated_at: number;
+    @Field(type => Number, { nullable: true })
+    @Column({ nullable: true })
+    updated_at?: number;
 
-    @Field(() => Number)
-    @Column()
-    published_at: number;
+    @Field(type => Number, { nullable: true })
+    @Column({ nullable: true })
+    published_at?: number;
 
-    @Field(() => String)
-    @Column()
-    custom_excerpt: string;
+    @Field(type => String, { nullable: true })
+    @Column({ nullable: true })
+    custom_excerpt?: string;
 
-    @Field(() => String)
+    @Field(type => String)
     @Column()
     url: string;
 
-    @Field(() => String)
-    @Column()
-    excerpt: string;
+    @Field(type => String, { nullable: true })
+    @Column({ nullable: true })
+    excerpt?: string;
 
-    @Field(() => Number)
-    @Column()
-    reading_time: number;
+    @Field(type => Number, { nullable: true })
+    @Column({ nullable: true })
+    reading_time?: number;
 
-    @Field(() => Boolean)
-    @Column()
-    access: boolean;
-    
-    @Field(() => String)
-    @Column()
-    og_image: string;
+    @Field(type => Boolean, { nullable: true })
+    @Column({ nullable: true })
+    access?: boolean;
 
-    @Field(() => String)
-    @Column()
-    og_title: string;
+    @Field(type => String, { nullable: true })
+    @Column({ nullable: true })
+    og_image?: string;
 
-    @Field(() => String)
-    @Column()
-    og_description: string;
+    @Field(type => String, { nullable: true })
+    @Column({ nullable: true })
+    og_title?: string;
 
-    @Field(() => String)
-    @Column()
-    twitter_title: string;
+    @Field(type => String, { nullable: true })
+    @Column({ nullable: true })
+    og_description?: string;
 
-    @Field(() => String)
-    @Column()
-    twitter_image: string;
+    @Field(type => String, { nullable: true })
+    @Column({ nullable: true })
+    twitter_title?: string;
 
-    @Field(() => String)
-    @Column()
-    twitter_description: string;
+    @Field(type => String, { nullable: true })
+    @Column({ nullable: true })
+    twitter_image?: string;
 
-    @Field(() => String)
-    @Column()
-    meta_title: string;
+    @Field(type => String, { nullable: true })
+    @Column({ nullable: true })
+    twitter_description?: string;
 
-    @Field(() => String)
-    @Column()
-    meta_description: string;
+    @Field(type => String, { nullable: true })
+    @Column({ nullable: true })
+    meta_title?: string;
 
-    @Field(() => String)
-    @Column()
-    email_subject: string;
+    @Field(type => String, { nullable: true })
+    @Column({ nullable: true })
+    meta_description?: string;
+
+    @Field(type => String, { nullable: true })
+    @Column({ nullable: true })
+    email_subject?: string;
 }
